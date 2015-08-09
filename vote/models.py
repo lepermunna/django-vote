@@ -23,7 +23,7 @@ class VoteManger(models.Manager):
 class Vote(models.Model):
     user = models.ForeignKey(AUTH_USER_MODEL)
     content_type = models.ForeignKey(ContentType)
-    object_id = models.PositiveIntegerField()
+    object_id = models.CharField(max_length=64)
     content_object = GenericForeignKey()
     create_at = models.DateTimeField(auto_now_add=True)
 
